@@ -9,7 +9,7 @@ export const profile = {
   last: "Content",
   role: "Content Creator",
   location: "Yaoundé",
-  email: "hello@marcovale.studio",
+  email: "hkc@hokagecontent.com",
   coordinates: "38.72° N · 9.14° W",
   booking: "Two collaborations open for spring 2027",
 }
