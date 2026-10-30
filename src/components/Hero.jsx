@@ -36,7 +36,7 @@ export default function Hero({ play }) {
           <motion.img
             className="hero-still"
             src={postureImage.src}
-            alt={postureImage.alt}
+            alt={t.a11y.heroImage}
             initial={{ opacity: 0 }}
             animate={play ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 1.2, ease }}

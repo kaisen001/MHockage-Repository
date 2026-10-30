@@ -1,16 +1,18 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useMemo, useRef } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { projects } from "../data"
+import { projects as baseProjects } from "../data"
 import { useLang } from "../i18n"
 
 export default function Work({ activeId, onActive, onOpen }) {
+  const { t, localizeProject } = useLang()
   const refs = useRef([])
+  const projects = useMemo(() => baseProjects.map(localizeProject), [localizeProject])
   const active = projects.find((project) => project.id === activeId) ?? projects[0]
 
   useEffect(() => {
     const onScroll = () => {
       const mid = window.innerHeight * 0.46
-      let best = projects[0].id
+      let best = baseProjects[0].id
       let bestDist = Infinity
       refs.current.forEach((el, index) => {
         if (!el) return
@@ -18,7 +20,7 @@ export default function Work({ activeId, onActive, onOpen }) {
         const dist = Math.abs(rect.top + rect.height / 2 - mid)
         if (dist < bestDist) {
           bestDist = dist
-          best = projects[index].id
+          best = baseProjects[index].id
         }
       })
       onActive((current) => (current === best ? current : best))
@@ -32,8 +34,8 @@ export default function Work({ activeId, onActive, onOpen }) {
   return (
     <section className="work" id="work">
       <div className="section-head">
-        <span>Selected work</span>
-        <h2>Pieces that earned their runtime.</h2>
+        <span>{t.work.kicker}</span>
+        <h2>{t.work.title}</h2>
       </div>
 
       <div className="work-layout">
@@ -62,7 +64,7 @@ export default function Work({ activeId, onActive, onOpen }) {
                   refs.current[index] = el
                 }}
                 className={`work-row${isActive ? " is-active" : ""}`}
-                data-cursor="View"
+                data-cursor={t.cursor.view}
                 onMouseEnter={() => onActive(project.id)}
                 onFocus={() => onActive(project.id)}
                 onClick={() => onOpen(project.id)}
@@ -86,7 +88,7 @@ export default function Work({ activeId, onActive, onOpen }) {
         <button
           type="button"
           className="work-stage"
-          data-cursor="View"
+          data-cursor={t.cursor.view}
           onClick={() => onOpen(active.id)}
         >
           <span className="work-frame" style={{ background: active.tone }}>

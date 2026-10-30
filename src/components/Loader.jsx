@@ -55,7 +55,7 @@ export default function Loader({ onDone }) {
       transition={{ duration: 0.9, ease }}
     >
       <div className="loader-top">
-        <span>MV</span>
+        <img className="loader-mark" src="/brand/mark-light.png" alt="Hokage Content" />
         <span>{t.loader.line}</span>
       </div>
       <p className="loader-count">{String(progress).padStart(3, "0")}</p>

@@ -94,7 +94,7 @@ export const projects = [
     logline:
       "Connecting Africa to the world through travel, study opportunities, and unforgettable discoveries.",
     note: "Your gateway to China, Canada, France & beyond",
-    tone: "#16303a",
+    tone: "#121c2e",
     image: "/stills/Afcalink.jpeg",
     stills: [
       "/stills/Afcalink.jpeg",
@@ -105,58 +105,42 @@ export const projects = [
   {
     id: "the-long-table",
     index: "04",
-    title: "The Long Table",
-    year: "2024",
+    title: "Laborex",
+    year: "2026",
     category: "Documentary",
-    runtime: "6 episodes",
+    runtime: "2 episodes",
     role: "Series director",
     logline:
       "One kitchen, six seasons, no host. Dinner is the interview.",
     note: "Shot in a single room, with the windows as the only coverage plan",
-    tone: "#2a1c16",
-    image: img("photo-1414235077428-338989a2e8c0"),
+    tone: "#111111",
+    image: "/stills/laborex.png",
     stills: [
-      img("photo-1414235077428-338989a2e8c0"),
-      img("photo-1556910103-1c02745aae4d"),
-      img("photo-1504674900247-0877df9cc836"),
+      "/stills/laborex.png",
+      "/Videos/Laborex/laborex-01.mp4",
+      "/Videos/Laborex/laborex-02.mp4",
     ],
   },
   {
-    id: "night-market",
+    id: "IAI CAMEROUN",
     index: "05",
-    title: "Night Market",
-    year: "2023",
+    title: "IAI CAMEROUN",
+    year: "2026",
     category: "Music visual",
     runtime: "3 min 20 sec",
     role: "Director",
     logline:
       "A song with nowhere to go, so the pictures refuse a chorus.",
     note: "Shot over one night, cut to the breath between lines",
-    tone: "#141820",
-    image: img("photo-1540959733332-eab4deabeeaf"),
+    tone: "#121a2b",
+    image: "/stills/iai.png",
     stills: [
-      img("photo-1540959733332-eab4deabeeaf"),
-      img("photo-1514565131-fce0801e5785"),
-      img("photo-1493514789331-4b3804a0e323"),
-    ],
-  },
-  {
-    id: "atlas-of-small-rooms",
-    index: "06",
-    title: "Atlas of Small Rooms",
-    year: "2023",
-    category: "Photo essay",
-    runtime: "24 frames",
-    role: "Photography, edit",
-    logline:
-      "Hotel rooms between call times. Notes on the hours when a shoot is not shooting.",
-    note: "A quiet companion to the films, published as a sequence",
-    tone: "#241e1a",
-    image: img("photo-1611892440504-42a792e24d32"),
-    stills: [
-      img("photo-1611892440504-42a792e24d32"),
-      img("photo-1505691938895-1758d7feb511"),
-      img("photo-1522771739844-6a9f6d5f14af"),
+      "/stills/iai.png",
+      {
+        src: "/Videos/IAI Cameroon/iai-01.web.mp4",
+        poster: "/stills/posters/iai-01.jpg",
+      },
+      "/Videos/IAI Cameroon/iai-02.mp4",
     ],
   },
 ]
@@ -170,31 +154,16 @@ export const reelVideo = {
 }
 
 export const genz = [
-  {
-    title: "GEN Z Festival",
-    category: "Wordmark",
-    year: "2026",
-    src: "/stills/GenZ_Festival_logo.jpeg",
-  },
-  {
-    title: "GEN Z Festival",
-    category: "Edit",
-    year: "2026",
-    src: "/Videos/GenZ/Gen Z Festival.mp4",
-    poster: "/stills/posters/genz-festival.jpg",
-  },
-  {
-    title: "On the floor",
-    category: "Still",
-    year: "2026",
-    src: "/stills/genz-crowd.png",
-  },
-  {
-    title: "On the mic",
-    category: "Still",
-    year: "2026",
-    src: "/stills/genz-mic.png",
-  },
+  { id: "gold-mic", title: "Gold mic", category: "Still", year: "2026", src: "/stills/gallery/gallery-02.jpg" },
+  { id: "masked", title: "Masked", category: "Still", year: "2026", src: "/stills/gallery/gallery-06.jpg" },
+  { id: "back-to-back", title: "Back to back", category: "Still", year: "2026", src: "/stills/gallery/gallery-03.jpg" },
+  { id: "lights-up", title: "Lights up", category: "Still", year: "2026", src: "/stills/gallery/gallery-07.jpg" },
+  { id: "smoke", title: "In the smoke", category: "Still", year: "2026", src: "/stills/gallery/gallery-09.jpg" },
+  { id: "dopelym", title: "Dopelym lands", category: "Poster", year: "2026", src: "/stills/gallery/gallery-05.jpg" },
+  { id: "media-crew", title: "Media crew", category: "Still", year: "2026", src: "/stills/gallery/gallery-08.jpg" },
+  { id: "backstage", title: "Backstage", category: "Still", year: "2026", src: "/stills/gallery/gallery-10.jpg" },
+  { id: "before-doors", title: "Before doors", category: "Still", year: "2026", src: "/stills/gallery/gallery-01.jpg" },
+  { id: "green-mask", title: "Green mask", category: "Still", year: "2026", src: "/stills/gallery/gallery-04.jpg" },
 ]
 
 export const marks = [

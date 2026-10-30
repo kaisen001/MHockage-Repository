@@ -17,7 +17,7 @@ export default function About() {
           viewport={{ once: true, margin: "-10% 0px" }}
           transition={{ duration: 1.1, ease }}
         >
-          <img src={aboutImage.src} alt={aboutImage.alt} />
+          <img src={aboutImage.src} alt={t.a11y.aboutImage} />
           <figcaption>{t.about.caption}</figcaption>
         </motion.figure>
 
@@ -27,7 +27,7 @@ export default function About() {
             <h2>{t.about.title}</h2>
           </div>
           <p className="lede">{t.about.lede}</p>
-          <p>{fill(t.about.body)}</p>
+          {t.about.body && <p>{fill(t.about.body)}</p>}
           <dl className="facts">
             <div>
               <dt>{t.about.practice}</dt>

@@ -6,8 +6,9 @@ import FilmVideo from "./FilmVideo"
 
 const ease = [0.16, 1, 0.3, 1]
 
-export default function CaseStudy({ project, onClose, onSelect }) {
-  const { t } = useLang()
+export default function CaseStudy({ project: baseProject, onClose, onSelect }) {
+  const { t, localizeProject } = useLang()
+  const project = localizeProject(baseProject)
   const scroller = useRef(null)
   const index = projects.findIndex((item) => item.id === project.id)
   const prev = projects[(index - 1 + projects.length) % projects.length]
@@ -64,11 +65,11 @@ export default function CaseStudy({ project, onClose, onSelect }) {
 
           <dl className="study-facts">
             <div>
-              <dt>Role</dt>
+              <dt>{t.study.role}</dt>
               <dd>{project.role}</dd>
             </div>
             <div>
-              <dt>Runtime</dt>
+              <dt>{t.study.runtime}</dt>
               <dd>{project.runtime}</dd>
             </div>
             <div>
@@ -92,10 +93,10 @@ export default function CaseStudy({ project, onClose, onSelect }) {
                     <FilmVideo
                       src={src}
                       poster={poster}
-                      label={`${project.title}, shot ${stillIndex + 1}`}
+                      label={`${project.title}, ${t.study.shot} ${stillIndex + 1}`}
                     />
                   ) : (
-                    <img src={src} alt={`${project.title}, still ${stillIndex + 1}`} />
+                    <img src={src} alt={`${project.title}, ${t.study.still} ${stillIndex + 1}`} />
                   )}
                 </figure>
               )

@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
+import { useLang } from "../i18n"
 
 const ease = [0.16, 1, 0.3, 1]
 const fly = { duration: 0.75, ease }
@@ -41,6 +42,7 @@ function stageBox(root, aspect = 16 / 9) {
 }
 
 export default function FilmVideo({ src, poster, label }) {
+  const { t } = useLang()
   const videoRef = useRef(null)
   const gateRef = useRef(null)
   const phaseRef = useRef("idle")
@@ -152,8 +154,8 @@ export default function FilmVideo({ src, poster, label }) {
               type="button"
               className="film-play"
               onClick={playFromFrame}
-              aria-label="Play video"
-              data-cursor="Play"
+              aria-label={t.a11y.playVideo}
+              data-cursor={t.cursor.play}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -181,8 +183,8 @@ export default function FilmVideo({ src, poster, label }) {
         <button
           type="button"
           className="film-hit"
-          aria-label="Pause video"
-          data-cursor="Pause"
+          aria-label={t.a11y.pauseVideo}
+          data-cursor={t.cursor.pause}
           onClick={toggleWhileOut}
           style={{
             top: coords.top,

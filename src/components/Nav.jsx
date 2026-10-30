@@ -58,7 +58,10 @@ export default function Nav({ ready }) {
         animate={ready ? { y: hidden && !open ? -90 : 0, opacity: 1 } : { y: -24, opacity: 0 }}
         transition={{ duration: 0.7, ease }}
       >
-        <nav className="nav-links" aria-label="Primary">
+        <a className="nav-brand" href="#top" aria-label={profile.name}>
+          <img src="/brand/mark-light.png" alt="" />
+        </a>
+        <nav className="nav-links" aria-label={t.a11y.primaryNav}>
           {nav.map((item) => (
             <a key={item.href} href={item.href}>
               {t.nav[item.href] ?? item.label}
@@ -84,7 +87,7 @@ export default function Nav({ ready }) {
           <motion.nav
             id="menu"
             className="menu"
-            aria-label="Menu"
+            aria-label={t.a11y.menu}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

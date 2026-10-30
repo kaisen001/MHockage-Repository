@@ -27,15 +27,16 @@ export function LanguageProvider({ children }) {
     }
   }, [lang])
 
-  const value = useMemo(
-    () => ({
+  const value = useMemo(() => {
+    const t = copy[lang] ?? copy.en
+    return {
       lang,
       setLang,
-      t: copy[lang] ?? copy.en,
+      t,
       languages,
-    }),
-    [lang],
-  )
+      localizeProject: (project) => (project ? { ...project, ...t.projectCopy?.[project.id] } : project),
+    }
+  }, [lang])
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
 }

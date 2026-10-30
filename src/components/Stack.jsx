@@ -82,6 +82,7 @@ export default function Stack({
   autoplayDelay = 3000,
   pauseOnHover = false,
   onChange,
+  label = "Card stack",
   className = "",
   style,
 }) {
@@ -487,7 +488,7 @@ export default function Stack({
       style={style}
       tabIndex={0}
       role="group"
-      aria-label="Card stack"
+      aria-label={label}
       onKeyDown={onKeyDown}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
